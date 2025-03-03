@@ -43,23 +43,24 @@ s.n. dasgupta
 cat < file1
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ cat<file1
+ec@sec-ThinkPad-E15-Gen-4:~/charu$ cat<file1
 chanchal singhvi
 c.k. shukla
 s.n. dasgupta
-sumit chakrobarty
+
 ```
 
 
 cat < file2
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ cat<file2
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ cat<file2
 anil aggarwal
 barun sengupta
 c.k. shukla
 lalit chowdury
 s.n. dasgupta
+
 ```
 
 
@@ -68,14 +69,15 @@ s.n. dasgupta
 cmp file1 file2
 ## OUTPUT
  ```
-sec@sec-ThinkPad-E15-Gen-4:~$ cmp file1 file2
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ cmp file1 file2
 file1 file2 differ: byte 1, line 1
+
 ```
 
 comm file1 file2
  ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ comm file1 file2
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ comm file1 file2
 	anil aggarwal
 	barun sengupta
 chanchal singhvi
@@ -83,13 +85,14 @@ chanchal singhvi
 	lalit chowdury
 		s.n. dasgupta
 sumit chakrobarty
+
 ```
 
  
 diff file1 file2
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ diff file1 file2
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ diff file1 file2
 1c1,2
 < chanchal singhvi
 ---
@@ -99,6 +102,7 @@ sec@sec-ThinkPad-E15-Gen-4:~$ diff file1 file2
 > lalit chowdury
 4d5
 < sumit chakrobarty
+\ No newline at end of file
 ```
 
 #Filters
@@ -124,24 +128,25 @@ cut -c1-3 file11
 ## OUTPUT
 
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ cut -c1-3 file11
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ cut -c1-3 file11
 Hel
 Thi
+
 
 cut -d "|" -f 1 file22
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ cut -d "|" -f 1 file22
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ cut -d "|" -f 1 file22
 1001 
 1002 
-1003
+1003 
 
 ```
 
 cut -d "|" -f 2 file22
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ cut -d "|" -f 2 file22
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ cut -d "|" -f 2 file22
  Ram 
  tom 
  Joe 
@@ -160,16 +165,18 @@ hello world
 grep Hello newfile 
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ grep Hello newfile
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ grep Hello newfile
 Hello world
+
 ```
 
 
 grep hello newfile 
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ grep hello newfile
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ grep hello newfile 
 hello world
+
 ```
 
 
@@ -177,17 +184,19 @@ hello world
 grep -v hello newfile 
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ grep -v hello newfile
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ grep -v hello newfile 
 Hello world
+
 ```
 
 
 cat newfile | grep -i "hello"
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ cat newfile | grep -i "hello"
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ cat newfile | grep -i "hello"
 Hello world
 hello world
+
 ```
 
 
@@ -196,8 +205,9 @@ hello world
 cat newfile | grep -i -c "hello"
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ cat newfile | grep -i -c "hello"
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ cat newfile | grep -i -c "hello"
 2
+
 ```
 
 
@@ -205,6 +215,7 @@ sec@sec-ThinkPad-E15-Gen-4:~$ cat newfile | grep -i -c "hello"
 grep -R ubuntu /etc
 ## OUTPUT
 ```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ grep -R ubuntu /etc
 /etc/apparmor.d/abstractions/ubuntu-email:# Users of this abstraction need to include the ubuntu-helpers abstraction
 /etc/apparmor.d/abstractions/ubuntu-email:#   include <abstractions/ubuntu-helpers>
 /etc/apparmor.d/abstractions/ubuntu-email:  include if exists <abstractions/ubuntu-email.d>
@@ -213,17 +224,17 @@ grep -R ubuntu /etc
 /etc/apparmor.d/abstractions/ubuntu-feed-readers:  include if exists <abstractions/ubuntu-feed-readers.d>
 /etc/apparmor.d/abstractions/ubuntu-bittorrent-clients:# Users of this abstraction need to include the ubuntu-helpers abstraction
 /etc/apparmor.d/abstractions/ubuntu-bittorrent-clients:#   include <abstractions/ubuntu-helpers>
-/etc/apparmor.d/abstractions/ubuntu-bittorrent-clients:  include if exists <abstractions/ubuntu-bittorrent-clients.d>
-/etc/apparmor.d/abstractions/ubuntu-xterm:  include if exists <abstractions/ubuntu-xterm.d
+
 ```
 
 
 grep -w -n world newfile   
 ## OUTPUT
 ```
-sec@sec-ThinkPad-E15-Gen-4:~$ grep -w -n world newfile   
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ grep -w -n world newfile  
 1:Hello world
 2:hello world
+
 ```
 
 cat < newfile 
@@ -247,60 +258,105 @@ Linux is best in this World
  ```
 egrep -w 'Hello|hello' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep -w 'Hello|hello' newfile
+Hello world
+hello world
+```
 
 
 egrep -w '(H|h)ello' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep -w '(H|h)ello' newfile 
+Hello world
+hello world
+```
 
 
 egrep -w '(H|h)ell[a-z]' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep -w '(H|h)ell[a-z]' newfile 
+Hello world
+hello world
+```
 
 
 
 egrep '(^hello)' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep '(^hello)' newfile 
+hello world
+```
 
 
 egrep '(world$)' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep '(world$)' newfile 
+Hello world
+hello world
+```
 
 
 egrep '(World$)' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep '(World$)' newfile 
+Linux is best in this World
+```
 
 egrep '((W|w)orld$)' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep '((W|w)orld$)' newfile
+Hello world
+hello world
+Linux is best in this World
+```
 
 
 egrep '[1-9]' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep '[1-9]' newfile
+Linux is world number 1
+```
 
 
 egrep 'Linux.*world' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep 'Linux.*world' newfile 
+Linux is world number 1
+``
 
 egrep 'Linux.*World' newfile 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep 'Linux.*World' newfile 
+Linux is best in this World
+```
 
 egrep l{2} newfile
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep l{2} newfile
+Hello world
+hello world
+```
 
 
 egrep 's{1,2}' newfile
 ## OUTPUT 
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charu$ egrep 's{1,2}' newfile
+Linux is world number 1
+Unix is predecessor
+Linux is best in this World
+```
 
 cat > file23
 ```
