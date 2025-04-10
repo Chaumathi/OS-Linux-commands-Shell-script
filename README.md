@@ -374,76 +374,167 @@ cat > file23
 
 sed -n -e '3p' file23
 ## OUTPUT
-
+```sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed -n -e '3p' file23
+1002 | tom |  5000 | Admin
+```
 
 
 sed -n -e '$p' file23
 ## OUTPUT
-
-
+```sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed -n -e '$p' file23
+1001 | Ram | 10000 | HR
+```
 
 sed  -e 's/Ram/Sita/' file23
 ## OUTPUT
-
+```sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed -e 's/Ram/Sita/' file23
+1001 | Sita | 10000 | HR
+1001 | Sita | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Sita | 10000 | HR
+```
 
 
 sed  -e '2s/Ram/Sita/' file23
 ## OUTPUT
-
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed  -e '2s/Ram/Sita/' file23
+```
+1001 | Ram | 10000 | HR
+1001 | Sita | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Ram | 10000 | HR
+```
 
 
 sed  '/tom/s/5000/6000/' file23
 ## OUTPUT
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed '/tom/s/5000/6000/' file23
+1001 | Ram | 10000 | HR
+1001 | Ram | 10000 | HR
+1002 | tom |  6000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+1003 | Joe |  7000 | Developer
+1001 | Ram | 10000 | HR
+````
 
 
 
 sed -n -e '1,5p' file23
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed -n -e '1,5p' file23
+1001 | Ram | 10000 | HR
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+```
 
 
 sed -n -e '2,/Joe/p' file23
 ## OUTPUT
-
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed -n -e '2,/Joe/p' file23
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+```
 
 
 sed -n -e '/tom/,/Joe/p' file23
 ## OUTPUT
-
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed -n -e '/tom/,/Joe/p' file23
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+```
 
 seq 10 
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ seq 10
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
 
 
 seq 10 | sed -n '4,6p'
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ seq 10 | sed -n '4,6p'
+4
+5
+6
+```
 
 
 seq 10 | sed -n '2,~4p'
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ seq 10 | sed -n '2,~4p'
+2
+3
+4
+```
 
 
 seq 3 | sed '2a hello'
 ## OUTPUT
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ swq -3 | sed '2a hello'
+Command 'swq' not found, did you mean:
+  command 'sq' from deb sq (0.25.0-3ubuntu0.22.04.1)
+  command 'seq' from deb coreutils (8.32-4.1ubuntu1)
+Try: sudo apt install <deb name>
+```
 
 
 
 seq 2 | sed '2i hello'
 ## OUTPUT
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ seq 2 | sed '2i hello'
+1
+hello
+2
+```
 
 
 seq 10 | sed '2,9c hello'
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ seq 10 | sed '2,9c hello'
+1
+hello
+10
+```
 
 sed -n '2,4{s/^/$/;p}' file23
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ sed -n '2,4{s/^/$/'p}' file23
+> 
+> 
+```
 
 
 sed -n '2,4{s/$/*/;p}' file23
@@ -473,14 +564,31 @@ cat > file22
 ``` 
 uniq file22
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ uniq file22
+1001 | Ram | 10000 | HR
+1002 | tom |  5000 | Admin
+1003 | Joe |  7000 | Developer
+1005 | Sam |  5000 | HR
+1004 | Sit |  7000 | Dev
+```
 
 
 #Using tr command
 
 cat file23 | tr [:lower:] [:upper:]
  ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ cat file23 | tr [:lower:] [:upper:]
+1001 | RAM | 10000 | HR
+1001 | RAM | 10000 | HR
+1002 | TOM |  5000 | ADMIN
+1003 | JOE |  7000 | DEVELOPER
+1005 | SAM |  5000 | HR
+1004 | SIT |  7000 | DEV
+1003 | JOE |  7000 | DEVELOPER
+1001 | RAM | 10000 | HR
+```
 cat < urllist.txt
 ```
 www. yahoo. com
@@ -496,18 +604,38 @@ www. mrcet.... com
  ```
 cat urllist.txt | tr -d ' '
  ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ cat urllist.txt | tr -d ' '
+www.yahoo.com
+www.google.com
+www.mrcet....com
+```
 
  
 cat urllist.txt | tr -d ' ' | tr -s '.'
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ cat urllist.txt | tr -d ' '| tr -s '.'
+www.yahoo.com
+www.google.com
+www.mrcet.com
+```
 
 
 #Backup commands
 tar -cvf backup.tar *
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ tar -cvf backup.tar *
+file1
+file11
+file2
+file21
+file22
+file23
+newfile
+urllist.txt
+```
 
 mkdir backupdir
  
@@ -515,19 +643,38 @@ mv backup.tar backupdir
  
 tar -tvf backup.tar
 ## OUTPUT
-
+```
+ec@sec-ThinkPad-E15-Gen-4:~/charumathi$ tar -tvf backupdir
+tar: backupdir: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+```
 
 tar -xvf backup.tar
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ tar -xvf backup.tar
+file1
+file11
+file2
+file21
+file22
+file23
+newfile
+urllist.txt
+```
 gzip backup.tar
 
 ls .gz
 ## OUTPUT
- 
+ ```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ ls .gz
+ls: cannot access '.gz': No such file or directory
+```
 gunzip backup.tar.gz
 ## OUTPUT
-
+```
+sec@sec-ThinkPad-E15-Gen-4:~/charumathi$ gunzip backup.tar.gz
+```
  
 # Shell Script
 ```
